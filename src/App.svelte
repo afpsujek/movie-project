@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let name: string;
+	const key = globalThis.__TMD_API_KEY__;
 </script>
 
 <main>
