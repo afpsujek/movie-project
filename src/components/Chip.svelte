@@ -13,6 +13,10 @@
         cursor: pointer;
     }
 
+    .chip:hover {
+        background-color: lightgreen;
+    }
+
     .selected {
         background-color: lightgray;
     }
