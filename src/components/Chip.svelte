@@ -5,7 +5,7 @@
 
 <style>
     .chip {
-        width: 10em;
+        width: 10rem;
         border: solid 1px black;
         border-radius: 10px;
         text-align: center;
