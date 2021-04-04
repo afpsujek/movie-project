@@ -12,8 +12,7 @@
 		session.update(() => sessionData.data.guest_session_id);
 		genres.update(() => genreData.data.genres.map(genre => {
 				return {...genre, selected: false};
-			})
-		)
+		}));
 	});
 
 	function onSelected(selected: Genre) {
