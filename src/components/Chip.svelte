@@ -21,5 +21,4 @@
 <div on:click
     class="{genre.selected ? 'selected' : ''} chip">
     {genre.name}
-    {genre.selected}
 </div>
