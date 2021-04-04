@@ -1,5 +1,4 @@
-import { readable } from 'svelte/store';
+import { writable } from 'svelte/store';
+import type { Genre } from '../models/genre';
 
-const genres = readable(null, set => {
-
-});
+export const genres = writable<Genre[]>(undefined);
