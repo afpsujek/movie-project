@@ -1,6 +1,7 @@
 <script lang="ts">
 	import axios from 'axios';
 	import Chip from './components/Chip.svelte'
+	import Suggestion from './components/Suggestion.svelte';
 	import { onMount } from 'svelte';
 	import { genres } from './store/genre'
 	import { session } from './store/session';
@@ -22,20 +23,40 @@
 	}
 </script>
 
-<main>
-	<h1>Don't know what movie to watch?</h1>
-	<h2>Let me help with that</h2>
+<main class="flex_column">
+	<div class="flex_column title_container">
+		<h1>Don't know what movie to watch?</h1>
+		<h2>Let me help with that</h2>
+	</div>
 
-	{#if $genres}
-		{#each $genres as genre}
-			<Chip on:click={() => onSelected(genre)} genre={genre}></Chip>
-		{/each}
-	{/if}
+	<div class="content_container">
+		<div class="flex_column chips_container">
+			{#if $genres}
+				{#each $genres as genre}
+					<Chip on:click={() => onSelected(genre)} genre={genre}></Chip>
+				{/each}
+			{/if}
+		</div>
+		<Suggestion></Suggestion>
+	</div>
 </main>
 
 <style>
-	main {
+	.flex_column {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.title_container {
+		align-items: center;
+	}
+
+	.chips_container {
+		width: fit-content;
+	}
+
+	.content_container {
+		display: flex;
+		padding-top: 1rem;
 	}
 </style>
